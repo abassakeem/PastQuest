@@ -11,11 +11,7 @@ const navLinks = [
         url: '/home'
         
     },
-    {
-        display: 'Jamb',
-        url: '/jamb'
-        
-    },
+    
     {
         display: 'Practice Test',
         url: "/practice_test"
@@ -49,7 +45,7 @@ const Header = () => {
 
 
           <Container >
-          <Navbar.Brand href="#home">Study<span className="Junction">Junction</span></Navbar.Brand>
+          <Navbar.Brand href="#home">Abass<span className="Junction">Quiz</span></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}

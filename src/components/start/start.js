@@ -21,6 +21,20 @@ import questions from "./../questions/questions.json";
 import { Link } from "react-router-dom";
 
 
+const shuffleArray = (array) => {
+    let currentIndex = array.length, randomIndex;
+    
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  };
+
+
 
 
 class Start extends Component {
@@ -58,10 +72,13 @@ class Start extends Component {
     }
 
     componentDidMount () {
-        const { questions, currentQuestion, nextQuestion, previousQuestion } = this.state;
-        this.displayQuestions(questions, currentQuestion, nextQuestion, previousQuestion);
-        this.startTimer();
-    }
+        const { questions } = this.state;
+        const shuffledQuestions = shuffleArray([...questions]);
+        this.setState({ questions: shuffledQuestions }, () => {
+          this.displayQuestions(this.state.questions, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);
+          this.startTimer();
+        });
+      }
 
     componentWillUnmount () {
         clearInterval(this.interval);

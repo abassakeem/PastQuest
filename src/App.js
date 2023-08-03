@@ -10,6 +10,7 @@ import { Helmet } from 'react-helmet';
 import PracticeTest from './components/practiceTest/practiceTest';
 import Start from './components/start/start';
 import QuizSummary from './components/quizSummary/quizSummary';
+import Wwtbam from './components/wwtbam/wwtbam';
 // import QuizSummary2 from './components/quizSummary/quizSummary2';
 
 
@@ -31,7 +32,7 @@ function App() {
         <Route exact path="/practice_test/start" component={Start} />
         <Route exact path="/practice_test" component={PracticeTest} />
         <Route exact path="/start/quiz_summary" component={QuizSummary}/>
-        {/* <Route path="/start/quiz_summary2" component={QuizSummary2}/> */}
+        <Route path="/start/wwtbam" component={Wwtbam}/>
 
       </Switch>
         </div>

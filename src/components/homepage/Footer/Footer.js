@@ -55,7 +55,7 @@ const Footer = () => {
         <Row>
           <Col lg="3" md="3" className="mb-4">
             <h2 className="text-center align-items-center  gap-1">
-               PastQuest.
+               AbassQuiz.
             </h2>
 
             <div className="follows">
