@@ -84,9 +84,9 @@ class QuizSummary extends Component {
                         <span className="mdi mdi-check-circle-outline success-icon"></span>
                     </div>
                     <Col>
-                    <h1 className='text-center mt-5'>Quiz has ended</h1>
+                    <h1 className='text-center mt-5 mb-5'>Quiz has ended</h1>
                     <div className="container stats">
-                        <div className="remarkandscore d-flex justify-content-around">
+                        <div className="remarkandscore d-flex justify-content-around mb-4">
                         <h4>{remark}</h4>
                         <h4>Your Score: <b>{this.state.score.toFixed(0)}&#37;</b></h4></div>
                         <div className="breakdown text-center">
