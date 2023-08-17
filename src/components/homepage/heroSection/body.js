@@ -11,7 +11,7 @@ const BodySection = () => {
             <Row className="align-items-center justify-content-center">
                 <Col lg= "5" md="5">
                     <div className="body-content">
-                    <h2 className="mb-4 " >Abass Quiz<br/><small><span className="text-1"> Your Reliable quiz app.</span></small>
+                    <h2 className="mb-4 " >PastQuest<br/><small><span className="text-1"> Your Reliable quiz app.</span></small>
                        
                        
                         
@@ -19,7 +19,7 @@ const BodySection = () => {
                     <p className="mb-4 text-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum voluptates ullam possimus delectus reprehenderit atque culpa, explicabo eveniet incidunt, est at repudiandae amet labore? Impedit labore nesciunt adipisci expedita incidunt?  .</p>
                     <div className="search ">
                     <div className="d-flex mb-5 justify-content-center align-items-center search-form">
-                    <Link to="/signup" className="btn btn-primary signup-button m-2" >Sign Up</Link>
+                    <Link to="/practice_test" className="btn btn-primary signup-button m-2" >start</Link>
                         
                         <Link to="/signin" className="btn btn-outline-success signin-button" >Sign In</Link>
                     </div>

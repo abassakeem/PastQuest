@@ -577,12 +577,13 @@ class Start extends Component {
                           
                     {/* <Link className="btn btn-success" to="/start/quiz_summary">submit 2</Link> */}
                     </Col>
-                    {explanation && (
+                    {/* show explanation */}
+                    {/* {explanation && (
                         <div className="explanation">
                             <h4>Explanation:</h4>
                             <p>{explanation}</p>
                         </div>
-                        )}
+                        )} */}
                     </Row>
                 </div>
                 

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const navLinks = [
     {
         display: 'Home',
-        url: '/home'
+        url: '/'
         
     },
     
@@ -17,16 +17,7 @@ const navLinks = [
         url: "/practice_test"
         
     },
-    {
-        display: 'About',
-        url: '/about'
-        
-    },
-    {
-        display: 'Fora',
-        url: '/fora'
-        
-    }
+    
 ]
 
 const Header = () => {
@@ -45,7 +36,7 @@ const Header = () => {
 
 
           <Container >
-          <Navbar.Brand href="#home">Abass<span className="Junction">Quiz</span></Navbar.Brand>
+          <Navbar.Brand href="#home">Past<span className="Junction">Quest</span></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}

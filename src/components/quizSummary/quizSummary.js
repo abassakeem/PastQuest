@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import questions from './../questions/questions.json';
@@ -83,40 +83,43 @@ class QuizSummary extends Component {
                     <div style={{ textAlign: 'center' }}>
                         <span className="mdi mdi-check-circle-outline success-icon"></span>
                     </div>
-                    <h1>Quiz has ended</h1>
+                    <Col>
+                    <h1 className='text-center mt-5'>Quiz has ended</h1>
                     <div className="container stats">
+                        <div className="remarkandscore d-flex justify-content-around">
                         <h4>{remark}</h4>
-                        <h2>Your Score: {this.state.score.toFixed(0)}&#37;</h2>
+                        <h4>Your Score: <b>{this.state.score.toFixed(0)}&#37;</b></h4></div>
+                        <div className="breakdown text-center">
                         <span className="stat left">Total number of questions: </span>
-                        <span className="right">{this.state.numberOfQuestions}</span><br />
+                        <span className="right"><b>{this.state.numberOfQuestions}</b></span><br />
 
                         <span className="stat left">Number of attempted questions: </span>
-                        <span className="right">{this.state.numberOfAnsweredQuestions}</span><br />
+                        <span className="right"><b>{this.state.numberOfAnsweredQuestions}</b></span><br />
 
                         <span className="stat left">Number of Correct Answers: </span>
-                        <span className="right">{this.state.correctAnswers}</span> <br />
+                        <span className="right"><b>{this.state.correctAnswers}</b></span> <br />
 
                         <span className="stat left">Number of Wrong Answers: </span>
-                        <span className="right">{this.state.wrongAnswers}</span><br />
+                        <span className="right"><b>{this.state.wrongAnswers}</b></span><br />
 
                         <span className="stat left">Hints Used: </span>
-                        <span className="right">{this.state.hintsUsed}</span><br />
+                        <span className="right"><b>{this.state.hintsUsed}</b></span><br />
 
                         <span className="stat left">50-50 Used: </span>
-                        <span className="right">{this.state.fiftyFiftyUsed}</span>
+                        <span className="right"><b>{this.state.fiftyFiftyUsed}</b></span>
+                        </div>
                     </div>
                     <section>
-                        <ul>
-                            <li>
-                                <Link to ="/play/quiz">Play Again</Link>
-                            </li>
-                            <li>
-                                <Link to ="/">Back to Home</Link>
-                            </li>
-                        </ul>
+                        <div className='d-flex justify-content-between m-3'>
+                            
+                                <Link to ="/play/start" className='btn btn-primary'>Play Again</Link>
+                            
+                                <Link to ="/" className='btn btn-outline-danger'>Back to Home</Link>
+                            
+                        </div>
                     </section>
-                    </Row>
-                    </Container>
+                    </Col>
+                   
                    {/* Display explanations */}
                    {/* {Object.keys(explanations).map((questionId) => (
   <div key={questionId} className="explanation">
@@ -128,18 +131,18 @@ class QuizSummary extends Component {
   </div>
 ))} */}
 {Object.values(explanations).map((explanation, index) => (
-  <div key={index} className="explanation">
-    <h3>Explanation for Question {index + 1}:</h3>
+  <div key={index} className="explanation btn btn-light mb-4">
+    <h3>Question {index + 1}:</h3>
     <p>Question: {explanation.question}</p>
     <p>Explanation: {explanation.explanation}</p>
     <p>Correct Answer: {explanation.correctAnswer}</p>
-    <p>Your Answer: {explanation.userAnswer}</p>
-    <p>Selected Option: {explanation.selectedOption}</p> {/* Display the selected option */}
+    
   </div>
 ))}
 
 
-
+</Row>
+                    </Container>
                 </Fragment>
             );
         } 
@@ -157,7 +160,9 @@ class QuizSummary extends Component {
                     </ul>
                 </section>
             );
+
         }
+        
         return (
             <Fragment>
                 <Helmet><title>Quiz App - Summary</title></Helmet>
@@ -165,7 +170,9 @@ class QuizSummary extends Component {
                     {stats}
                 </div>
             </Fragment>
+            
         );
+        
     }
 }
 

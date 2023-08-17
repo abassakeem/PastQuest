@@ -10,15 +10,15 @@ import { Helmet } from 'react-helmet';
 import PracticeTest from './components/practiceTest/practiceTest';
 import Start from './components/start/start';
 import QuizSummary from './components/quizSummary/quizSummary';
-import Wwtbam from './components/wwtbam/wwtbam';
-// import QuizSummary2 from './components/quizSummary/quizSummary2';
+import SignUp from './components/sign up/signUp';
+import LogIn from './components/login/login';
 
 
 
 function App() {
   return (
     <Fragment>
-      <Helmet><title>StudyJunction</title></Helmet>
+      <Helmet><title>PastQuest</title></Helmet>
 
     <Router>
      
@@ -31,8 +31,10 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/practice_test/start" component={Start} />
         <Route exact path="/practice_test" component={PracticeTest} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/login" component={LogIn} />
         <Route exact path="/start/quiz_summary" component={QuizSummary}/>
-        <Route path="/start/wwtbam" component={Wwtbam}/>
+       
 
       </Switch>
         </div>
