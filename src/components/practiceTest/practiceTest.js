@@ -26,7 +26,7 @@ const PracticeTest = () => {
                         <div className="buttons d-flex align-items-center justify-content-center text-center">
 
                     <Link to="/practice_test/start" className="btn m-4  btn-primary practice-test-start-button" variant="outline-success">Start </Link>
-                        <Link to="/login" className="btn m-4 btn-outline-success practice-test-signin-button" variant="outline-success">log in</Link>
+  
                     
                     
                           </div>

@@ -38,23 +38,21 @@ class QuizSummary extends Component {
         }
     }
     loadExplanations = () => {
-  const { questions, selectedOptions } = this.state;
-  const explanations = [];
-  questions.forEach((question, index) => {
-    const userAnswer = selectedOptions && selectedOptions[index];
-    if (question.answer !== userAnswer) {
-      const selectedOption = userAnswer || 'Not answered';
-      explanations.push({
-        question: question.question,
-        explanation: question.explanation,
-        correctAnswer: question.answer,
-        userAnswer,
-        selectedOption,
-      });
-    }
-  });
-  this.setState({
-    explanations,
+        const { questions } = this.state;
+        const explanations = [];
+        questions.forEach((question, index) => {
+          const userAnswer = question.userAnswer || 'Not answered';
+          if (question.answer !== userAnswer) {
+            explanations.push({
+              question: question.question,
+              explanation: question.explanation,
+              correctAnswer: question.answer,
+              userAnswer,
+            });
+          }
+        });
+        this.setState({
+          explanations,
   });
 };
     render () {
@@ -165,12 +163,28 @@ class QuizSummary extends Component {
         
         return (
             <Fragment>
-                <Helmet><title>Quiz App - Summary</title></Helmet>
-                <div className="quiz-summary">
-                    {stats}
+            <Helmet>
+              <title>Quiz App - Summary</title>
+            </Helmet>
+            <div className="quiz-summary">
+              {stats}
+              {/* Display explanations */}
+              {explanations.length > 0 && (
+                <div className="explanations-container mt-4">
+                  <h2 className="text-center mb-3">Explanations</h2>
+                  {explanations.map((explanation, index) => (
+                    <div key={index} className="explanation btn btn-light mb-4">
+                      <h3>Question {index + 1}:</h3>
+                      <p>Question: {explanation.question}</p>
+                      <p>Explanation: {explanation.explanation}</p>
+                      <p>Correct Answer: {explanation.correctAnswer}</p>
+                      <p>Your Answer: {explanation.userAnswer}</p>
+                    </div>
+                  ))}
                 </div>
-            </Fragment>
-            
+              )}
+            </div>
+          </Fragment>
         );
         
     }
