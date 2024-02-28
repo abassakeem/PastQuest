@@ -19,20 +19,24 @@ const BodySection = () => {
         <div className="section">
           <Row className="align-items-center justify-content-center">
             <Col lg="5" md="5">
-              <div className="body-content">
-                <h2 className="mb-4">
+              <div className="body-content text-center">
+                <h2 className="">
                   PastQuest
-                  <br />
-                  <small>
-                    <span className="text-1"> Your Reliable quiz app.</span>
-                  </small>
+               
                 </h2>
-                <p className="mb-4 text-3">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Voluptatum voluptates ullam possimus delectus reprehenderit
-                  atque culpa, explicabo eveniet incidunt, est at repudiandae
-                  amet labore? Impedit labore nesciunt adipisci expedita
-                  incidunt? .
+                <small>
+                  <b>
+                    <span className="text-1"> Your Reliable quiz app.</span>
+                  </b>
+                </small>
+                <p className="my-4 text-3">
+                  "Embark on a captivating journey through time and knowledge
+                  with PastQuest – your ultimate quiz app! Delve into a treasure
+                  trove of historical, cultural, and general knowledge quizzes
+                  that transport you across different eras. From ancient
+                  civilizations to modern history, PastQuest challenges your
+                  intellect and sparks curiosity. – where every quiz is a voyage
+                  through time!".
                 </p>
                 <div className="search">
                   <div className="d-flex mb-5 justify-content-center align-items-center search-form">
@@ -40,30 +44,27 @@ const BodySection = () => {
                       <>
                         <Link
                           to="/practice_test"
-                          className="btn btn-primary signup-button m-2"
+                          className=" signup-button m-2"
                         >
                           Start Quiz
                         </Link>
                         <button
                           onClick={logout}
-                          className="btn btn-outline-success signin-button"
+                          className=" logout-button"
                         >
                           Log out
                         </button>
                       </>
                     ) : (
                       <>
-                        <Link
-                          to="/login"
-                          className="btn btn-primary signup-button m-2"
-                        >
+                        <Link to="/login" className=" signin-button m-2">
                           Log in
                         </Link>
                         <Link
                           to="/signup"
-                          className="btn btn-outline-success signin-button"
+                          className=" signup-button"
                         >
-                          Sign Up
+                          Get Started
                         </Link>
                       </>
                     )}

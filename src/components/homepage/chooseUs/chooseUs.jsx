@@ -1,5 +1,5 @@
 import { Col, Container, Image, Row } from "react-bootstrap";
-import chooseUs from"./../../../assets/img/choose-Us.svg";
+import chooseUs from"./../../../assets/img/RaisingHand.png";
 import CountUp from 'react-countup';
 import "./chooseUs.css";
 const ChooseUs = () => {

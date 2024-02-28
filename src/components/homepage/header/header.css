@@ -11,7 +11,20 @@
     
 }
 .navbar-container{
-    background-color: #f9f9f9;
+    background-color: #fff;
+    position: sticky !important;
+    top: 0 !important;
+    border-bottom: 0.1px solid #000;
+}
+.logo-text{
+    font-family: 'Lobster', cursive !important; 
+    font-weight:900;
+    letter-spacing: 2px;
+    font-size: 2em;
+   
+}
+.quest{
+    color: var(--pq-primary);
 }
 .nav-list{
     margin-left: 0;
@@ -23,27 +36,30 @@
     
     color: #0a2b1e;
     transition: 0.2s;
+}
    
 .nav-item a{
      text-decoration: none;
      color: #0a2b1e;
 }
-}
+
 .nav-item a:hover{
     color: #17bf9e ;
 }
 .login-button{
-    color: #fff !important;
+    color: var(--pq-primary) !important;
     font-size: 0.75em !important;
-    
-    background-color: #e2451c !important;
+    padding: 0.5rem 1rem;
+    border-radius: 18px;
+    box-shadow: 2px 2px 3px #868484;
+    border: 1px solid var(--pq-primary) !important;
+    transition: .25s ease-in-out;
    
 }
+
 .login-button:hover{
+    box-shadow: none;
     
-    color:#fff !important;
-    background-color: #bd310d !important;
-   
 }
 .offcanvas-container{
     width: 250px !important;

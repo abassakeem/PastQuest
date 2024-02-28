@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import {
   BrowserRouter as Router,
   Route,
@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Homepage from "./components/homepage/homepage";
 import Login from "./components/login/login";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 import { Fragment } from "react";
 import { Helmet } from "react-helmet";
@@ -17,7 +17,7 @@ import Start from "./components/start/start";
 import QuizSummary from "./components/quizSummary/quizSummary";
 import SignUp from "./components/sign up/signUp";
 import LogIn from "./components/login/login";
-
+import "./App.css";
 function App() {
   return (
     <Fragment>

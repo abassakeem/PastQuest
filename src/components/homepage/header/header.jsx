@@ -37,11 +37,11 @@ const Header = () => {
 
 
                 {[ 'lg' ].map((expand) => (
-        <Navbar key={expand} expand={expand} className="navbar-container mb-3">
+        <Navbar key={expand} expand={expand} id="navbar-container" className="position-sticky top-0 navbar-container mb-3">
 
 
-          <Container >
-          <Navbar.Brand href="#home">Past<span className="Junction">Quest</span></Navbar.Brand>
+          <Container className="">
+          <Navbar.Brand className="logo-text" href="#home">Past<span className="quest">Quest</span></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}
@@ -72,9 +72,9 @@ const Header = () => {
                         <Nav.Item>
                             <ButtonToolbar>
                               {isLoggedIn ? (
-                                <button variant="outline-success" bsSize="small" onClick={logout} className="btn btn-outline-success login-button" to="/login">Log out</button>
+                                <button variant="outline-success" bsSize="small" onClick={logout} className="btn btn-outline-success logout-button" to="/login">Log out</button>
                               ): (
-                                 <Link variant="outline-success" bsSize="small" className="btn btn-outline-success login-button" to="/login">Log in</Link>
+                                 <Link variant="outline-success" bsSize="small" className=" login-button" to="/login">Log in</Link>
                               )}
                        
                         </ButtonToolbar>

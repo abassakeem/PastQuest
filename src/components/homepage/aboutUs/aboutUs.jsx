@@ -1,5 +1,5 @@
 import { Col, Container, Image, Row } from "react-bootstrap";
-import aboutUs from"./../../../assets/img/about-us.svg";
+import aboutUs from"./../../../assets/img/Class.png";
 
 import CountUp from 'react-countup';
 import "./aboutUs.css";
@@ -36,7 +36,7 @@ const AboutUs = () => {
                                     
                                         <CountUp start={0} end={12} duration={2} suffix="K"/>
                                     </span>
-                                    <p className="counter-title">Taking  jamb</p>
+                                    <p className="counter-title">Taking  </p>
                                 </div>
                                 </div>
                             <div className="d-flex gap-5 align-items-center ">
@@ -54,7 +54,7 @@ const AboutUs = () => {
                                     
                                         <CountUp start={0} end={72} duration={2} suffix="K"/>
                                     </span>
-                                    <p className="counter-title">Taking  jamb</p>
+                                    <p className="counter-title">Taking  </p>
                                 </div>
                                 </div>
                               
