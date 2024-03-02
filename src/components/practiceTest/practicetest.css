@@ -59,3 +59,70 @@
     color: #fff;
     background-color: var(--study-junction-black) !important;
 } */
+
+.instructions-button{
+    background-color: transparent;
+    color: var(--pq-primary);
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #000;
+}
+.instructions-button:hover{
+    background-color: transparent;
+    color: var(--pq-blue);
+}
+.instructions-button:active,.instructions-button:visited{
+    background-color: var(--pq-primary);
+  
+}
+.start-button{
+    color: #fff !important;
+    font-size: 1.15em !important;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 18px;
+  border: none !important;
+    background-color:   var(--pq-blue) !important;
+    transition: .25s ease-in-out;
+    cursor: pointer;
+}
+
+.modal-back-btn{
+    border: none ;
+    
+    color: var(--pq-primary);
+    background-color: transparent;
+}
+.modal-start-btn{
+    border: none ;
+ 
+    color: var(--pq-primary);
+    background-color: transparent;
+}
+.modal-start-link{
+    text-decoration: none;
+    background-color: var(--pq-blue);
+    border-radius: 30px;
+    padding: 0.5em 1em ;
+    color: #fff;
+}
+
+.modal-back-link{
+    text-decoration: none;
+    border: 0.1px solid var(--pq-primary);
+    border-radius: 30px;
+    padding: 0.5em 1em ;
+    color: var(--pq-primary);
+
+}
+.modal-back-link:hover{
+    background-color: var(--pq-primary);
+    color: #fff;
+    transition: 0.25s;
+
+}
+.modal-start-link:hover{
+    opacity: 0.75;
+    transition: 0.25s;
+
+}

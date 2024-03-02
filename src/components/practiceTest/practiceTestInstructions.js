@@ -18,13 +18,13 @@ const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   return(
    <Fragment>
-  <Button variant="outline-dark" onClick={handleShow}>
+  <Button  className='instructions-button' onClick={handleShow}>
         Instructions
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title><h1>How to Play the Game</h1></Modal.Title>
+          <Modal.Title><h3>How To Play the Game</h3></Modal.Title>
         </Modal.Header>
         <Modal.Body> <Container>
             <Row>
@@ -76,12 +76,12 @@ const [show, setShow] = useState(false);
         </Row>
         </Container></Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-          <Link className='btn btn-secondary' to="/">No take me back</Link>
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-          <Link className='btn btn-primary' to="/practice_test/start">Okay, Let's do this!</Link>
-          </Button>
+          <button className='modal-back-btn'  onClick={handleClose}>
+          <Link className='modal-back-link' to="/practice_test">Cancel</Link>
+          </button>
+          <button className='modal-back-btn' onClick={handleClose}>
+          <Link className='modal-start-link' to="/practice_test/start">Okay, Let's do this!</Link>
+          </button>
         </Modal.Footer>
       </Modal>
 

@@ -6,11 +6,7 @@ import { Link } from "react-router-dom";
 
 //links for the navbar and thier display names
 const navLinks = [
-    {
-        display: 'Home',
-        url: '/'
-        
-    },
+    
     
     {
         display: 'Practice Test',
@@ -41,7 +37,7 @@ const Header = () => {
 
 
           <Container className="">
-          <Navbar.Brand className="logo-text" href="#home">Past<span className="quest">Quest</span></Navbar.Brand>
+          <Navbar.Brand className="logo-text" to="/" >Past<span className="quest">Quest</span></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}

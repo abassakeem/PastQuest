@@ -337,7 +337,7 @@ class Start extends Component {
     }
 
     startTimer = () => {
-        const countDownTime = Date.now() + 180000;
+        const countDownTime = Date.now() + 18000000;
         this.interval = setInterval(() => {
             const now = new Date();
             const distance = countDownTime - now;
@@ -536,15 +536,8 @@ class Start extends Component {
                 <Col>
                 <div className="button-container">
                     <Row>
-                        <Col xs="6">
-                    <Button onClick={this.handleButtonClick} variant="success" id="previous-button"  className={classnames('practice-quiz-button previous-button', {'disable practice-quiz-button previous-button': this.state.previousButtonDisabled})}>
-                        Previous
-                    </Button>
-                    <Button onClick={this.handleButtonClick} variant="primary" className={classnames('practice-quiz-button next-button', {'disable practice-quiz-button next-button': this.state.nextButtonDisabled})} id="next-button" >
-                        Next
-                    </Button>
-                    </Col>
-                    <Col xs="6" className="justify-content-end d-flex">
+                      
+                    <Col xs="6" className="justify-content-start d-flex">
                     
                     {/* <Button onClick={this.endGame} variant="danger" id="quit-button" className="practice-quiz-button quit-button ">
                         Submit
@@ -576,6 +569,14 @@ class Start extends Component {
                         </Modal>
                           
                     {/* <Link className="btn btn-success" to="/start/quiz_summary">submit 2</Link> */}
+                    </Col> 
+                     <Col xs="6" className="d-flex justify-content-end">
+                    <Button onClick={this.handleButtonClick} variant="success" id="previous-button"  className={classnames('practice-quiz-button previous-button', {'disable practice-quiz-button previous-button': this.state.previousButtonDisabled})}>
+                        Previous
+                    </Button>
+                    <Button onClick={this.handleButtonClick} variant="primary" className={classnames('practice-quiz-button next-button', {'disable practice-quiz-button next-button': this.state.nextButtonDisabled})} id="next-button" >
+                        Next
+                    </Button>
                     </Col>
                     {/* show explanation */}
                     {/* {explanation && (

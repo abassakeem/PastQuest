@@ -64,7 +64,7 @@
     transition: .25s ease-in-out;
 }
 .signin-button:hover{
-    opacity: 0.55;
+    opacity: 0.75;
 }
 .logout-button{
  
@@ -77,3 +77,4 @@
     transition: .25s ease-in-out;
    
 }
+
