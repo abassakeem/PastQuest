@@ -49,9 +49,26 @@
     border: 1px solid  var(--pq-primary) !important;
     transition: .25s ease-in-out;
 }
+
+
+
 .signup-button:hover{
     background-color: var(--pq-primary);
     color: #fff !important;
+}
+.startquiz-button{
+    color: #000 !important;
+    font-size: 0.75em !important;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 18px;
+  
+    border: 1px solid  var(--pq-blue) !important;
+    transition: .25s ease-in-out; 
+}
+.startquiz-button:hover{
+    background-color: var(--pq-blue);
+    color: #fff !important
 }
 .signin-button{
     color: #fff !important;

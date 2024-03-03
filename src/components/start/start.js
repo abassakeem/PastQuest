@@ -544,7 +544,7 @@ class Start extends Component {
                     </Button> */}
 
                     
-                    <Button variant="danger" onClick={this.handleShow}>
+                    <Button className="submit-button" onClick={this.handleShow}>
                             submit
                         </Button>
 
@@ -561,10 +561,10 @@ class Start extends Component {
                                 Are you sure you want to submit?
                             </Modal.Body>
                             <Modal.Footer>
-                            <Button variant="secondary" onClick={this.handleClose}>
+                            <button className="modal-back-link" onClick={this.handleClose}>
                                 Close
-                            </Button>
-                            <Button variant="success" onClick={this.endGame}>Submit</Button>
+                            </button>
+                            <button className="modal-start-link border-0 border-none" onClick={this.endGame}>Submit</button>
                             </Modal.Footer>
                         </Modal>
                           

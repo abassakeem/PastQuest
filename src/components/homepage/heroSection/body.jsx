@@ -44,7 +44,7 @@ const BodySection = () => {
                       <>
                         <Link
                           to="/practice_test"
-                          className=" signup-button m-2"
+                          className=" startquiz-button m-2"
                         >
                           Start Quiz
                         </Link>

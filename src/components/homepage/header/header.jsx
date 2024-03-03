@@ -32,8 +32,8 @@ const Header = () => {
 
 
 
-                {[ 'lg' ].map((expand) => (
-        <Navbar key={expand} expand={expand} id="navbar-container" className="position-sticky top-0 navbar-container mb-3">
+                {[ 'md' ].map((expand) => (
+        <Navbar key={expand} expand={expand} id="navbar-container" className=" top-0 navbar-container mb-3">
 
 
           <Container className="">

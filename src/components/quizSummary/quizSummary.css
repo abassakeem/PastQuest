@@ -1,0 +1,8 @@
+.backtohome{
+    background-color: var(--pq-primary);
+    color: #fff;
+
+}
+.backtohome:hover{
+    opacity: 0.75;
+}

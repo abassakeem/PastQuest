@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    position: static;
+    top: 0;
 }
 
 .header{
@@ -12,8 +14,7 @@
 }
 .navbar-container{
     background-color: #fff;
-    position: sticky !important;
-    top: 0 !important;
+ 
     border-bottom: 0.1px solid #000;
 }
 .logo-text{
@@ -44,7 +45,7 @@
 }
 
 .nav-item a:hover{
-    color: #17bf9e ;
+    color: var(--pq-blue) ;
 }
 .login-button{
     color: var(--pq-primary) !important;

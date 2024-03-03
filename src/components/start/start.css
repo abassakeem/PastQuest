@@ -59,16 +59,25 @@
     margin: 10px 10px 0 10px;
 }
 .disable{
-    background-color: #ccc;
-    opacity: 0.9;
-    cursor:not-allowed;
+   display: none;
 }
 .disable:hover{
     cursor: not-allowed;
     background-color: #ccc;
 }
 .option.selected {
-    background-color: #ff0000; /* Replace with your desired color */
-    color: #ffffff; /* Replace with your desired color */
+    background-color: #c4c0c0; /* Replace with your desired color */
+    color: var(--pq-grey); /* Replace with your desired color */
   }
-  
+
+  .next-button{
+    background-color: var(--pq-blue);
+    border-radius: 30px;
+    padding: 0.5em 1em;
+  }
+  .previous-button{
+    background-color: var(--pq-grey);
+    border-radius: 30px;
+    padding: 0.5em 1em;
+    transition: 0.25s;
+  }

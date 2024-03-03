@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
+import "./quizSummary.css"
 import { Link } from 'react-router-dom';
 import questions from './../questions/questions.json';
 
@@ -110,9 +111,9 @@ class QuizSummary extends Component {
                     <section>
                         <div className='d-flex justify-content-between m-3'>
                             
-                                <Link to ="/play/start" className='btn btn-primary'>Play Again</Link>
+                                <Link to ="/play/start" className='modal-start-link '>Play Again</Link>
                             
-                                <Link to ="/" className='btn btn-outline-danger'>Back to Home</Link>
+                                <Link to ="/" className='modal-back-link backtohome'>Back to Home</Link>
                             
                         </div>
                     </section>
@@ -150,10 +151,10 @@ class QuizSummary extends Component {
                     <h1 className="no-stats">No Statistics Available</h1>
                     <ul>
                         <li>
-                            <Link to ="/play/quiz">Take a Quiz</Link>
+                            <Link className='modal-start-link' to ="/play/quiz">Take a Quiz</Link>
                         </li>
                         <li>
-                            <Link to ="/">Back to Home</Link>
+                            <Link className='modal-back-link' to ="/">Back to Home</Link>
                         </li>
                     </ul>
                 </section>
@@ -169,20 +170,7 @@ class QuizSummary extends Component {
             <div className="quiz-summary">
               {stats}
               {/* Display explanations */}
-              {explanations.length > 0 && (
-                <div className="explanations-container mt-4">
-                  <h2 className="text-center mb-3">Explanations</h2>
-                  {explanations.map((explanation, index) => (
-                    <div key={index} className="explanation btn btn-light mb-4">
-                      <h3>Question {index + 1}:</h3>
-                      <p>Question: {explanation.question}</p>
-                      <p>Explanation: {explanation.explanation}</p>
-                      <p>Correct Answer: {explanation.correctAnswer}</p>
-                      <p>Your Answer: {explanation.userAnswer}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
+             
             </div>
           </Fragment>
         );

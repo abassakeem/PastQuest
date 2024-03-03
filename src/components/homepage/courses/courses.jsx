@@ -145,7 +145,7 @@ const Courses = () => {
             </Row>
             <Row>
                 <div className="course-button mt-5">
-            <Button className="more-courses-button"  variant="outline-success" onClick={handleShow}>
+            {/* <Button className="more-courses-button"  variant="outline-success" onClick={handleShow}>
                 <Image className="more-img" src={more} fluid/>
             </Button>
             
@@ -166,7 +166,7 @@ const Courses = () => {
                     </Col>
                     ))}
                 </Offcanvas.Body>
-            </Offcanvas>
+            </Offcanvas> */}
             </div>
             </Row>
             </div>
