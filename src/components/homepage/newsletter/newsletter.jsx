@@ -12,14 +12,20 @@ const Newsletter = () => {
             <Row>
                 <Col lg="12" className="text-center">
                     <h2 className="newsletter-h2">Subscribe to our Newsletter</h2>
-                     <Form className="d-flex justify-content-center align-items-center subscribe-form">
-                        <input
+                     <Form className="d-flex justify-content-center align-items-center flex-column subscribe-form">
+                        <div className="">
+                             <input
                         type="email"
                         placeholder="Subscribe"
                         className="me-2 subscribe-input"
                         aria-label="Email"
                         />
-                        <Button className="subscribe-button" variant="dark">Sign up</Button>
+                        </div>
+                       
+                        <div className="mt-2">
+                              <button className="subscribe-button" >Sign up</button>
+                        </div>
+                      
                     </Form>
                 </Col>
             </Row>

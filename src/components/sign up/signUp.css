@@ -5,28 +5,31 @@
 }
 
 .sign-up-horizontal-line::before{
-    content: "or";
+   
     width: 10px;
     height: 10px;
     color: #fff;
     font-size: 12px;
     padding: 0px 6px;
     background-color: black;
-    position: relative;
+   
     top: -15px;
     
 
     
     
 }
+.password-container{
+    position: relative;
+}
 .fisheye{
-    background-color: transparent;
-    color: #000;
-     position: relative;
-     right:-250px;
-     bottom:33px;
+
+    color: #a7a7a7;
+    position: absolute;
+   right: 10px;
+   top: 10px;
      border: none;
-     width: min-content;
+    
    
 }
 .profile-name-text{
@@ -59,6 +62,13 @@
     cursor: pointer;
     border-radius: 0;
 }
-.signup-submit-button{
-    width: 260px !important;
+.sign-up-footer{
+    font-size: 12px;
+    color: #747474;
+   
+}
+.sign-up-footer a{
+    
+    color: var(--pq-primary);
+    
 }

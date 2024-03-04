@@ -13,15 +13,23 @@
     margin-bottom: 20px;
 }
 .subscribe-input {
-    width: 300px;
+  
     border: 1px solid black;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 30px;
 }
 .subscribe-form{
    border: 0 !important;
     
 }
 .subscribe-button{
-    height: 60px;
+    padding: 0.5em 1em;
+    background-color: transparent;
+    color: #000;
+    border-radius: 30px;
+}
+.subscribe-button:hover{
+    background-color: #000;
+    color: #fff;
+    transition: .25s ease-in-out;
 }

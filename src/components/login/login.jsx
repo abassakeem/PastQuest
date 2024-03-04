@@ -1,6 +1,14 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Container, Row, Col, Form, Button, InputGroup } from "react-bootstrap";
+import {
+  Navbar,
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  InputGroup,
+} from "react-bootstrap";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 import "./login.css";
@@ -18,17 +26,17 @@ const LogIn = () => {
   const handleSignIn = () => {
     const storedEmail = localStorage.getItem("email");
     const storedPassword = localStorage.getItem("password");
+    const storedNickname = localStorage.getItem("nickname");
 
     const enteredEmail = email.current.value;
     const enteredPassword = password.current.value;
 
-    if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
+    if ((enteredEmail === storedEmail && enteredPassword === storedPassword) || (enteredEmail === storedNickname && enteredPassword === storedPassword)) {
       localStorage.setItem("signUp", enteredEmail);
       alert("Successfully signed in");
       window.location.href = "/practice_test";
     } else {
       alert("Invalid email or password");
-
     }
   };
 
@@ -36,17 +44,15 @@ const LogIn = () => {
     <div className="loginSection text-center text-dark vh-100">
       <Navbar expand="lg" className="musicshop-nav">
         <Container fluid>
-          <Navbar.Brand className="musicshop-brand">
-            <Link to="/">PastQuest</Link>
-          </Navbar.Brand>
+        <Navbar.Brand className="logo-text"  ><Link to="/">Past<span className="quest">Quest</span></Link></Navbar.Brand>
         </Container>
       </Navbar>
 
       <Row className="d-flex flex-column justify-content-center align-items-center">
-        <div className="login-form-section">
+        <div className="login-form-section mt-5">
           <div className="top-section">
             <div>
-              <h1 className="login-h1-text">Log In To PastQuest</h1>
+              <h1 className="login-h1-text">Log In</h1>
             </div>
           </div>
           <div className="horizontal-line"></div>
@@ -62,31 +68,28 @@ const LogIn = () => {
                     <Form.Control
                       className="email-input"
                       type="email"
-                      placeholder="Email or Username"
+                      placeholder="Email or Nickname"
                       autoComplete="off"
                       ref={email}
                     />
                   </Form.Group>
-
-                  <Form.Group className="mb-1" controlId="formBasicPassword">
-                    <Form.Control
-                      className="password-input"
-                      type={showPassword ? "text" : "password"}
-                      placeholder="Password"
-                      ref={password}
-                    />
-                    <InputGroup.Text
-                      className="fisheye"
-                      onClick={togglePasswordVisibility}
-                    >
-                      {showPassword ? (
-                        <BsFillEyeSlashFill />
-                      ) : (
-                        <BsFillEyeFill />
-                      )}
-                    </InputGroup.Text>
-                  </Form.Group>
-
+                  <div className="p-relative">
+                  <div className="mb-3 password-container" controlId="formBasicPassword">
+                  <Form.Control
+                    className="password-input "
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Enter password"
+                    ref={password}
+                    autoComplete="new-password" // To avoid browser password suggestions
+                  />
+                  <span
+                    className="fisheye"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
+                  </span>
+                </div>
+</div>
                   <Form.Check
                     className="remember-me-button text-dark"
                     type="switch"
@@ -109,7 +112,7 @@ const LogIn = () => {
                 <Link to="/signup">Forgot your password?</Link>
               </div>
             </Row>
-            <div className="horizontal-line"></div>
+            <div className="horizontal-line sign-up-horizontal-line"></div>
             <Row>
               <Col>
                 <div className="sign-up-footer">

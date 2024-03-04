@@ -70,16 +70,14 @@ useEffect(()=>{
     <div className="loginSection text-center">
       <Navbar expand="lg" className="musicshop-nav">
         <Container fluid>
-          <Navbar.Brand className="musicshop-brand">
-            <Link to="/">PastQuest</Link>
-          </Navbar.Brand>
+        <Navbar.Brand className="logo-text"  ><Link to="/">Past<span className="quest">Quest</span></Link></Navbar.Brand>
         </Container>
       </Navbar>
       {/* <section className='box-section '> */}
-      <div className="login-form-section ">
+      <div className="login-form-section mt-5">
         <div className="top-section sign-up-top-section">
           <div>
-            <h1 className="login-h1-text">Sign Up PastQuest</h1>
+            <h1 className="login-h1-text">Sign Up </h1>
           </div>
         </div>
         <div className="horizontal-line sign-up-horizontal-line"></div>
@@ -99,8 +97,8 @@ useEffect(()=>{
                     placeholder="Email address"
                   />
                 </Form.Group>
-
-                <Form.Group className="mb-1" controlId="formBasicPassword">
+               
+                <div className="mb-3 password-container" controlId="formBasicPassword">
                   <Form.Control
                     className="password-input "
                     type={showPassword ? "text" : "password"}
@@ -108,18 +106,16 @@ useEffect(()=>{
                     ref={password}
                     autoComplete="new-password" // To avoid browser password suggestions
                   />
-                  <InputGroup.Text
+                  <span
                     className="fisheye"
                     onClick={togglePasswordVisibility}
                   >
                     {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
-                  </InputGroup.Text>
-                </Form.Group>
+                  </span>
+                </div>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label className="password-text text-input text-dark">
-                    What shoud we call you?
-                  </Form.Label>
+                  
                   <Form.Control
                     className="nickname-input"
                     type="text"
@@ -127,7 +123,7 @@ useEffect(()=>{
                     placeholder="Enter a profile name."
                   />
                   <span className="profile-name-text text-dark">
-                    This appears on your profile.
+                    This is your Nickname .
                   </span>
                 </Form.Group>
                 <div className="signup-checkbox2 text-dark">
@@ -210,7 +206,7 @@ useEffect(()=>{
               </Form>
             </Col>
           </Row>
-
+          <div className="horizontal-line mt-4 sign-up-horizontal-line"></div>
           <Row>
             <Col>
               <div className="sign-up-footer">
