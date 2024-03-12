@@ -18,6 +18,7 @@ import QuizSummary from "./components/quizSummary/quizSummary";
 import SignUp from "./components/sign up/signUp";
 import LogIn from "./components/login/login";
 import "./App.css";
+
 function App() {
   return (
     <Fragment>

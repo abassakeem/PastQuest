@@ -48,7 +48,7 @@ const PracticeTest = () => {
                   </p>
 
 
-                  <Modal show={show} onHide={handleClose}>
+                  <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
           <Modal.Title></Modal.Title>
         </Modal.Header>

@@ -23,3 +23,43 @@
     width: 210px;
     height: 160px;
 }
+@media only screen and (min-width: 1200px) {
+    /* Styles for screens 1200px and wider */
+  }
+  
+  /* Small desktop styles */
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    /* Styles for screens between 992px and 1199px wide */
+  }
+  
+  /* Tablet styles */
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* Styles for screens between 768px and 991px wide */
+    
+  }
+  
+  /* Mobile styles */
+  @media only screen and (max-width: 767px) {
+    /* Styles for screens up to 767px wide */
+    .school-img{
+        height: 30% !important;
+    }
+    .img-6{
+        width: 70px;
+        height: 110px;
+    }
+    .img-1 {
+        width: 60px;
+        height: 110px;
+        
+    }
+    .img-2 {
+        width: 50px;
+        height: 80px;
+    }
+    .img-3{
+        width: 110px;
+        height: 10px;
+    }
+  }
+  

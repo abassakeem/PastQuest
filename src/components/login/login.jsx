@@ -10,13 +10,14 @@ import {
   InputGroup,
 } from "react-bootstrap";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
-
+import swal from "sweetalert";
+import { useHistory } from "react-router-dom";
 import "./login.css";
 
 const LogIn = () => {
   const email = useRef();
   const password = useRef();
-
+  const history = useHistory();
   const [showPassword, setShowPassword] = React.useState(false);
 
   const togglePasswordVisibility = () => {
@@ -31,22 +32,52 @@ const LogIn = () => {
     const enteredEmail = email.current.value;
     const enteredPassword = password.current.value;
 
-    if ((enteredEmail === storedEmail && enteredPassword === storedPassword) || (enteredEmail === storedNickname && enteredPassword === storedPassword)) {
-      localStorage.setItem("signUp", enteredEmail);
-      alert("Successfully signed in");
-      window.location.href = "/practice_test";
+    if (
+      (enteredEmail === storedEmail && enteredPassword === storedPassword) ||
+      (enteredEmail === storedNickname && enteredPassword === storedPassword)
+    ) {
+      localStorage.setItem('signUp', enteredEmail);
+      swal({
+        title: 'Successfully signed in',
+        icon: 'success',
+      }).then(() => {
+        // Navigate to 'practice_test' using useHistory
+        history.push('/practice_test');
+      });
     } else {
-      alert("Invalid email or password");
+      swal({
+        title: 'Invalid email or password',
+        icon: 'error',
+      });
     }
   };
 
   return (
+
+    <>
+    
+  
     <div className="loginSection text-center text-dark vh-100">
-      <Navbar expand="lg" className="musicshop-nav">
-        <Container fluid>
-        <Navbar.Brand className="logo-text"  ><Link to="/">Past<span className="quest">Quest</span></Link></Navbar.Brand>
-        </Container>
-      </Navbar>
+      <header className="header">
+        {["md"].map((expand) => (
+          <Navbar
+            key={expand}
+            expand={expand}
+            id="navbar-container"
+            className=" top-0 navbar-container mb-3"
+          >
+            <Container className="">
+              <Navbar.Brand className="logo-text" to="/">
+                Past<span className="quest">Quest</span>
+              </Navbar.Brand>
+              <Navbar.Toggle
+                aria-controls={`offcanvasNavbar-expand-${expand}`}
+              />
+             
+            </Container>
+          </Navbar>
+        ))}
+      </header>
 
       <Row className="d-flex flex-column justify-content-center align-items-center">
         <div className="login-form-section mt-5">
@@ -74,22 +105,29 @@ const LogIn = () => {
                     />
                   </Form.Group>
                   <div className="p-relative">
-                  <div className="mb-3 password-container" controlId="formBasicPassword">
-                  <Form.Control
-                    className="password-input "
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Enter password"
-                    ref={password}
-                    autoComplete="new-password" // To avoid browser password suggestions
-                  />
-                  <span
-                    className="fisheye"
-                    onClick={togglePasswordVisibility}
-                  >
-                    {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
-                  </span>
-                </div>
-</div>
+                    <div
+                      className="mb-3 password-container"
+                      controlId="formBasicPassword"
+                    >
+                      <Form.Control
+                        className="password-input "
+                        type={showPassword ? "text" : "password"}
+                        placeholder="Enter password"
+                        ref={password}
+                        autoComplete="new-password" // To avoid browser password suggestions
+                      />
+                      <span
+                        className="fisheye"
+                        onClick={togglePasswordVisibility}
+                      >
+                        {showPassword ? (
+                          <BsFillEyeSlashFill />
+                        ) : (
+                          <BsFillEyeFill />
+                        )}
+                      </span>
+                    </div>
+                  </div>
                   <Form.Check
                     className="remember-me-button text-dark"
                     type="switch"
@@ -118,7 +156,7 @@ const LogIn = () => {
                 <div className="sign-up-footer">
                   Don't have an account?{" "}
                   <span>
-                    <Link to="/signup">Sign Up for PastQuest.</Link>
+                    <Link to="/signup">Sign Up.</Link>
                   </span>
                 </div>
               </Col>
@@ -126,7 +164,7 @@ const LogIn = () => {
           </div>
         </div>
       </Row>
-    </div>
+    </div>  </>
   );
 };
 

@@ -3,13 +3,14 @@ import img1 from "./../../../assets/img/Education.png";
 import "./body.css";
 import { Link } from "react-router-dom";
 import SignUp from "../../sign up/signUp";
+import swal from "sweetalert";
 
 const BodySection = () => {
   const isLoggedIn = localStorage.getItem("signUp");
 
   const logout = () => {
     localStorage.removeItem("signUp");
-    alert("Logged out");
+    swal("Logged out");
     window.location.reload();
   };
 

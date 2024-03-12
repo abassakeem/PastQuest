@@ -22,7 +22,7 @@ const [show, setShow] = useState(false);
         Instructions
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
           <Modal.Title><h3>How To Play the Game</h3></Modal.Title>
         </Modal.Header>

@@ -11,20 +11,21 @@ import {
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
+import swal from "sweetalert";
 import { FcGoogle } from "react-icons/fc";
 import { LiaApple } from "react-icons/lia";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
-
+import { useNavigate } from "react-router-dom";
 import "./signUp.css";
+import { useHistory } from "react-router-dom";
+
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -34,45 +35,102 @@ const SignUp = () => {
     setShowPassword(!showPassword);
   };
 
-    const email=useRef()
-    const nickname=useRef()
-    const password=useRef()
-const [showHome,setShowHome] = useState(false)
+  const email = useRef();
+  const nickname = useRef();
+  const password = useRef();
+  const [showHome, setShowHome] = useState(false);
+  const history = useHistory();
+  const localSignUp = localStorage.getItem("signUp");
 
-    const localSignUp = localStorage.getItem("signUp")
+  const showAlertWithLink = () => {
+    swal({
+      title: "Visit OpenAI",
+      text: "Click the link below to visit OpenAI",
+      icon: "info",
+      buttons: {
+        cancel: "Cancel",
+        confirm: {
+          text: "Visit OpenAI",
+          value: "visit",
+        },
+      },
+    }).then((value) => {
+      if (value === "visit") {
+        window.open("/practice_test");
+      }
+    });
+  };
 
-
-
-
-useEffect(()=>{
-  if( localSignUp){
-    setShowHome(true)
-  }
-})
-   const handleClick=()=>{
-    
-    if(password.current.value && email.current.value &&nickname.current.value){
-     localStorage.setItem("email",email.current.value)
-     localStorage.setItem("nickname",nickname.current.value)
-     localStorage.setItem("password",password.current.value)
-     localStorage.setItem("signUp",email.current.value)
-     alert("Account created successfully")
-     window.location.href = "/practice_test";
-    
+  useEffect(() => {
+    if (localSignUp) {
+      setShowHome(true);
     }
-    else {
-      alert("Error, there is a missing field!")
+  });
+  const handleClick = () => {
+    if (
+      password.current.value &&
+      email.current.value &&
+      nickname.current.value
+    ) {
+      localStorage.setItem("email", email.current.value);
+      localStorage.setItem("nickname", nickname.current.value);
+      localStorage.setItem("password", password.current.value);
+      localStorage.setItem("signUp", email.current.value);
+
+      swal({
+        title: "Account Created Successfully",
+        icon: "success",
+        buttons: {
+          confirm: {
+            text: "Go to Practice Test",
+            value: "confirm",
+          },
+        },
+      }).then((value) => {
+        if (value === "confirm") {
+          history.push('/practice_test');
+        }
+      });
+    } else {
+      swal({
+        title: "Error",
+        text: "There is a missing field!",
+        icon: "error",
+      });
     }
-   }
-  
+  };
 
   return (
+
+    <>
+    
+
     <div className="loginSection text-center">
-      <Navbar expand="lg" className="musicshop-nav">
-        <Container fluid>
-        <Navbar.Brand className="logo-text"  ><Link to="/">Past<span className="quest">Quest</span></Link></Navbar.Brand>
-        </Container>
-      </Navbar>
+
+ <header className="header">
+        {["md"].map((expand) => (
+          <Navbar
+            key={expand}
+            expand={expand}
+            id="navbar-container"
+            className=" top-0 navbar-container mb-3"
+          >
+            <Container className="">
+              <Navbar.Brand className="logo-text" to="/">
+                Past<span className="quest">Quest</span>
+              </Navbar.Brand>
+              <Navbar.Toggle
+                aria-controls={`offcanvasNavbar-expand-${expand}`}
+              />
+             
+            </Container>
+          </Navbar>
+        ))}
+      </header>
+
+
+
+      
       {/* <section className='box-section '> */}
       <div className="login-form-section mt-5">
         <div className="top-section sign-up-top-section">
@@ -97,8 +155,11 @@ useEffect(()=>{
                     placeholder="Email address"
                   />
                 </Form.Group>
-               
-                <div className="mb-3 password-container" controlId="formBasicPassword">
+
+                <div
+                  className="mb-3 password-container"
+                  controlId="formBasicPassword"
+                >
                   <Form.Control
                     className="password-input "
                     type={showPassword ? "text" : "password"}
@@ -106,16 +167,12 @@ useEffect(()=>{
                     ref={password}
                     autoComplete="new-password" // To avoid browser password suggestions
                   />
-                  <span
-                    className="fisheye"
-                    onClick={togglePasswordVisibility}
-                  >
+                  <span className="fisheye" onClick={togglePasswordVisibility}>
                     {showPassword ? <BsFillEyeSlashFill /> : <BsFillEyeFill />}
                   </span>
                 </div>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  
                   <Form.Control
                     className="nickname-input"
                     type="text"
@@ -197,7 +254,6 @@ useEffect(()=>{
                 </div>
 
                 <Button
-                  
                   onClick={handleClick}
                   className="d-flex align-items-center justify-content-center login-submit-button signup-submit-button"
                 >
@@ -219,7 +275,7 @@ useEffect(()=>{
           </Row>
         </div>
       </div>
-    </div>
+    </div>    </>
   );
 };
 

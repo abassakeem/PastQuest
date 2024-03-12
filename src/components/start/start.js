@@ -456,7 +456,7 @@ class Start extends Component {
         } = this.state;
 
     return ( 
-        <div className="quiz-container d-flex justify-content-center align-items-center ">
+        <div className="quiz-container d-flex justify-content-center align-items-center vh-100">
             <Helmet><title>Quiz Page</title></Helmet>
 
            <Container>
@@ -466,12 +466,12 @@ class Start extends Component {
                     <audio ref={this.wrongSound} src={wrongNotification}></audio>
                     <audio ref={this.buttonSound} src={buttonSound}></audio>
                 </Fragment>
-            <h1 className="quiz-text text-center mt-5">Practice Quiz</h1>
+            
             <div className="practice-section">
             <Row>
                 
                     
-                <div></div>
+                <Col xs={12} className="text-center"><h3>Quiz</h3> </Col>
                 <Col xs="6"  className="d-flex justify-content-start">
                     
                 <div className="lifeline-container" onClick={this.handleFiftyFifty}>
@@ -544,7 +544,7 @@ class Start extends Component {
                     </Button> */}
 
                     
-                    <Button className="submit-button" onClick={this.handleShow}>
+                    <Button className="logout-button" onClick={this.handleShow}>
                             submit
                         </Button>
 
@@ -553,6 +553,7 @@ class Start extends Component {
                             onHide={this.handleClose}
                             backdrop="static"
                             keyboard={false}
+                            centered
                         >
                             <Modal.Header closeButton>
                             <Modal.Title>Confirm Submission</Modal.Title>
@@ -571,12 +572,17 @@ class Start extends Component {
                     {/* <Link className="btn btn-success" to="/start/quiz_summary">submit 2</Link> */}
                     </Col> 
                      <Col xs="6" className="d-flex justify-content-end">
-                    <Button onClick={this.handleButtonClick} variant="success" id="previous-button"  className={classnames('practice-quiz-button previous-button', {'disable practice-quiz-button previous-button': this.state.previousButtonDisabled})}>
+                        <div className="">
+                              <Button onClick={this.handleButtonClick} variant="success" id="previous-button"  className={classnames('practice-quiz-button previous-button', {'disable practice-quiz-button previous-button': this.state.previousButtonDisabled})}>
                         Previous
                     </Button>
-                    <Button onClick={this.handleButtonClick} variant="primary" className={classnames('practice-quiz-button next-button', {'disable practice-quiz-button next-button': this.state.nextButtonDisabled})} id="next-button" >
+                        </div>
+                  <div className="">
+                     <Button onClick={this.handleButtonClick} variant="primary" className={classnames('practice-quiz-button next-button', {'disable practice-quiz-button next-button': this.state.nextButtonDisabled})} id="next-button" >
                         Next
                     </Button>
+                  </div>
+                   
                     </Col>
                     {/* show explanation */}
                     {/* {explanation && (
