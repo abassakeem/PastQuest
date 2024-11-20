@@ -18,6 +18,7 @@ import QuizSummary from "./components/quizSummary/quizSummary";
 import SignUp from "./components/sign up/signUp";
 import LogIn from "./components/login/login";
 import "./App.css";
+import LandingPage from "./Pages/LandingPage";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route exact path="/practice_test" component={PracticeTest} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/login" component={LogIn} />
+            <Route exact path="/home" component={LandingPage} />
             <Route exact path="/start/quiz_summary" component={QuizSummary}/>
           </Switch>
         </div>
